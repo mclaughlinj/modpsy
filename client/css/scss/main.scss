@@ -1,0 +1,176 @@
+@import 'mixins';
+
+header, nav, footer, article {
+  display: block;
+}
+
+body {
+  background: #000000;
+  color: #fff;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #fff;
+}
+
+a:active {
+  text-shadow: 1px 1px 4px #b9dcdd;
+}
+
+header {
+  font-weight: bold;
+  font-size: larger;
+}
+
+header h1 {
+  text-align: center;
+}
+
+footer {
+  clear: both;
+}
+
+footer a {
+  font-weight: normal;
+}
+
+nav ul {
+  padding-left: 0px;
+  text-align: center;
+}
+
+nav ul li {
+  text-align: center;
+  display: inline;
+  list-style-type: none;
+  list-style-position: inside;
+  background: #fff;
+  padding: 20px;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  margin: 0px 0px 0px 12px;
+  font-size: 1.5em;
+  line-height: 2.5em;
+}
+
+nav ul li a {
+  color: #000;
+}
+
+nav ul li a:visited {
+  color: inherit;
+}
+
+
+details {
+  display: block;
+  background: #ececec;
+  padding: 5px;
+  margin: 5px 0px 5px 5px;
+  color: #000;
+  border-radius: 6px;
+  font-size: smaller;
+}
+
+article footer {
+  padding: 6px 0px 0px 0px;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 481px) {
+  body {
+    font-size: 16px;
+    margin: 0px 65px;
+  }
+
+  header, nav, footer, article {
+    display: block;
+  }
+
+  header {
+    font-weight: bold;
+    font-size: larger;
+  }
+
+  article header {
+    font-weight: bold;
+    font-size: larger;
+    margin: 0 auto;
+    width: 466px;
+    text-align: right;
+  }
+
+  nav {
+    background: #6C6C6C;
+    color: #000000;
+    display: none;
+    height: 100%;
+    left: -170px;
+    position: fixed;
+    top: 0;
+    width: 210px;
+    transition: background 1s;
+  }
+
+  #navArrow {
+    @include at2x('../img/modpsy_burger', png, 40px, 40px);
+    position: absolute;
+    top: 40%;
+    left: 81%;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+  }
+
+  .display {
+    left: 0px;
+  }
+
+  article {
+    width: 100%;
+    text-align: left;
+    padding-right: 250px;
+  }
+
+  nav ul {
+    width: 170px;
+  }
+
+  nav ul li {
+    background: none;
+    color: #fff;
+    display: block;
+    margin: 0px 0px 6px 10px;
+    text-align: left;
+    padding: 5px;
+    font-size: 1.0em;
+    line-height: 1.0em;
+  }
+
+  nav ul li a {
+    color: #000;
+  }
+
+  footer {
+    display: none;
+    text-align: right;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  body {
+    font-size: 12px;
+    margin: 0px 65px;
+  }
+}
