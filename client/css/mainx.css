@@ -121,6 +121,12 @@ width: 210px;
 transition: background 1s;
 }
 
+navOpen {
+background: rgb(0, 0, 0);
+/* RGBa with 0.6 opacity */
+background: rgba(0, 0, 0, 0.8);
+}
+
 #navArrow {
 .at2x('../img/modpsy_burger.png', 40px, 40px);
 position: absolute;

@@ -1,8 +1,11 @@
+html {
+  font: 100% "Trebuchet MS", Helvetica, sans-serif; }
+
 header, nav, footer, article {
   display: block; }
 
 body {
-  background: #000000;
+  background-color: #000000;
   color: #fff;
   font-size: 20px; }
 
@@ -23,38 +26,89 @@ header {
   font-weight: bold;
   font-size: larger; }
 
-header h1 {
+.page__header__h1 {
+  display: none;
   text-align: center; }
 
-footer {
-  clear: both; }
+.home__section__header, .portfolio__section__header {
+  font-size: 17px;
+  font-weight: bold;
+  font-size: larger;
+  margin: 0 auto;
+  width: 466px;
+  text-align: right; }
 
-footer a {
+.home__section__mainContent, .portfolio__section__mainContent {
+  margin: 0 auto;
+  width: 100%;
+  display: none;
+  position: relative; }
+
+.portfolio__section__img {
+  display: block;
+  width: 0px;
+  margin: 0 auto;
+  transition: width 2s, height 2s;
+  position: relative;
+  top: 0; }
+
+.imgOne {
+  z-index: 1000; }
+
+.imgTwo, .imgThree {
+  position: absolute;
+  top: 100px; }
+
+.imgThree {
+  position: absolute;
+  top: 100px; }
+
+footer {
+  clear: both;
+  margin-top: 20px; }
+
+.page__footer__byline {
+  float: left;
+  font-weight: bold; }
+
+.page__footer__a {
   font-weight: normal; }
 
-nav ul {
+nav {
+  color: #000000;
+  display: none;
+  height: 150px;
+  width: 100%;
+  left: 0;
+  position: fixed;
+  top: -150px;
+  transition: background 1s, top 0.5s; }
+
+.page__nav__ul {
   padding-left: 0px;
   text-align: center; }
 
-nav ul li {
-  text-align: center;
-  display: inline;
-  list-style-type: none;
-  list-style-position: inside;
-  background: #fff;
-  padding: 20px;
-  color: #000;
-  font-weight: bold;
-  border-radius: 6px;
-  margin: 0px 0px 0px 12px;
-  font-size: 1.5em;
-  line-height: 2.5em; }
+.page__nav__open {
+  background: white;
+  /* RGBa with 0.6 opacity */
+  background: rgba(255, 255, 255, 0.9);
+  top: 0; }
 
-nav ul li a {
-  color: #000; }
+.page__nav__reveal__div {
+  background-image: url("../img/modpsy_burger-white.png");
+  position: absolute;
+  top: 155px;
+  right: 10px;
+  background-color: transparent;
+  width: 80px;
+  height: 80px; }
+  @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+    .page__nav__reveal__div {
+      background-image: url("../img/modpsy_burger-white@2x.png");
+      background-size: 80px 80px; } }
 
-nav ul li a:visited {
-  color: inherit; }
+.page__artcile {
+  display: none; }
 
 details {
   display: block;
@@ -69,10 +123,14 @@ article footer {
   padding: 6px 0px 0px 0px;
   font-weight: bold; }
 
-@media only screen and (min-width: 481px) {
+.tapable {
+  cursor: pointer; }
+
+@media only screen and (min-device-width: 481px) {
   body {
-    font-size: 16px;
-    margin: 0px 65px; }
+    font-size: 18px;
+    margin: 55px 65px;
+    background-color: #000000; }
   header, nav, footer, article {
     display: block; }
   header {
@@ -85,26 +143,30 @@ article footer {
     width: 466px;
     text-align: right; }
   nav {
-    background: #6C6C6C;
     color: #000000;
     display: none;
-    height: 100%;
-    left: -170px;
+    height: 100px;
+    width: 100%;
+    left: 0;
     position: fixed;
-    top: 0;
-    width: 210px;
-    transition: background 1s; }
-  #navArrow {
-    background-image: url("../img/modpsy_burger.png");
+    top: -100px;
+    transition: background 1s, top 0.5s; }
+  .page__nav__open {
+    background: white;
+    /* RGBa with 0.6 opacity */
+    background: rgba(255, 255, 255, 0.9);
+    top: 0; }
+  .page__nav__reveal__div {
+    background-image: url("../img/modpsy_burger-white.png");
     position: absolute;
-    top: 40%;
-    left: 81%;
+    top: 105px;
+    right: 10px;
     background-color: transparent;
     width: 40px;
     height: 40px; }
     @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-      #navArrow {
-        background-image: url("../img/modpsy_burger@2x.png");
+      .page__nav__reveal__div {
+        background-image: url("../img/modpsy_burger-white@2x.png");
         background-size: 40px 40px; } }
   .display {
     left: 0px; }
@@ -112,24 +174,65 @@ article footer {
     width: 100%;
     text-align: left;
     padding-right: 250px; }
-  nav ul {
-    width: 170px; }
   nav ul li {
-    background: none;
+    background-color: #000000;
+    border-radius: 5px;
     color: #fff;
-    display: block;
+    display: inline-block;
     margin: 0px 0px 6px 10px;
     text-align: left;
     padding: 5px;
-    font-size: 1em;
-    line-height: 1em; }
+    font-size: 26px;
+    line-height: 1em;
+    width: auto; }
   nav ul li a {
-    color: #000; }
+    color: #FFFFFF; }
   footer {
     display: none;
     text-align: right; } }
 
 @media only screen and (min-width: 1025px) {
   body {
-    font-size: 12px;
-    margin: 0px 65px; } }
+    font-size: 16px;
+    margin: 0px 65px; }
+  nav {
+    height: 100%;
+    left: -170px;
+    top: 0;
+    width: 210px;
+    transition: background 1s, left 1s; }
+  .page__nav__open {
+    background: white;
+    /* RGBa with 0.6 opacity */
+    background: rgba(255, 255, 255, 0.9);
+    left: 0; }
+  .page__nav__reveal__div {
+    top: 10px;
+    left: 180px; }
+  nav ul {
+    width: 170px; }
+  nav ul li {
+    display: block;
+    font-size: 14px; }
+  .home__section__mainContent, .portfolio__section__mainContent {
+    margin: 0 auto;
+    width: 894px;
+    display: none;
+    position: relative; }
+  .portfolio__section__img {
+    display: block;
+    transition: width 2s, height 2s, top 4s; }
+  .imgOne {
+    width: 480px;
+    margin: 0 auto;
+    z-index: 1000;
+    position: relative;
+    top: 0; }
+  .imgTwo, .imgThree {
+    margin: 0 107px;
+    position: absolute;
+    top: 70px;
+    opacity: 0.6;
+    width: 450px; }
+  .imgThree {
+    margin: 0 337px; } }
